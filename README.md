@@ -236,6 +236,25 @@ Clears JWT tokens and redirects to the login page.
 -SWAP_PENDING prevents double-offers while a swap is processed.
 
 
+🧑‍💻 Demo Credentials
+use the following credentials to log in and test the application:
+1. username:cherishma
+password:21k81a1240@C
+
+2.username:shivani
+password:123456
+
+3.username:sharanya
+password:sharu08
+
+4.username:ShivaniPariveda
+password:Lkjh@456
+
+5.username:cheri
+password:cheri05
+
+
+
 👩‍💻 Author
 
 Name:Pariveda Cherishma
