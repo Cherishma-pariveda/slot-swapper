@@ -236,6 +236,79 @@ Clears JWT tokens and redirects to the login page.
 -SWAP_PENDING prevents double-offers while a swap is processed.
 
 
+
+To scale the integration between the frontend and backend for a real production environment, I would make the following improvements:
+
+1. Use a Dedicated Production Server
+
+Replace the Django development server with Gunicorn
+
+Put Nginx in front for load balancing, HTTPS, static file serving
+
+2. Move to a Cloud-Hosted Database
+
+Use PostgreSQL instead of SQLite
+
+Configure connection pooling (PgBouncer)
+
+Add database indexes for faster queries
+
+3. Deploy Frontend Separately on a CDN
+
+Build React app (Vite) → Deploy to Vercel / Netlify / Cloudflare Pages
+
+Serve static files via CDN for faster global delivery
+
+4. Environment-Based API Routing
+
+Use environment variables:
+
+VITE_API_BASE_URL=https://api.myapp.com
+
+Frontend communicates with a stable public API URL
+
+No hardcoded localhost URLs
+
+5. Token Management & Security
+
+Store JWT securely (HttpOnly cookies or memory)
+
+Enable CORS protections
+
+HTTPS-only communication
+
+6. Caching & Performance
+
+Add Redis caching for:
+
+repeated GET requests
+
+swappable slot lists
+
+Reduce database load and speed up UI responsiveness
+
+7. API Optimization
+
+Add pagination to large lists
+
+Add filtering & search parameters
+
+Prevent overfetching and reduce payload sizes
+
+8. Containerization & CI/CD
+
+Use Docker for consistency
+
+CI/CD with GitHub Actions for:
+
+testing
+
+automatic deployment
+
+faster iteration
+
+
+
 🧑‍💻 Demo Credentials
 use the following credentials to log in and test the application:
 1. username:cherishma
